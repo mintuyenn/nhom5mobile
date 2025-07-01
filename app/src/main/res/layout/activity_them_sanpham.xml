@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- Ảnh sản phẩm -->
+        <ImageView
+            android:id="@+id/imgHinhSP"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            android:background="@drawable/bg_message_box"
+            android:contentDescription="Hình sản phẩm" />
+
+        <!-- Nút chọn ảnh -->
+        <Button
+            android:id="@+id/btnChonAnh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📷 Chọn ảnh"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <!-- Tên sản phẩm -->
+        <EditText
+            android:id="@+id/edtTenSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="📝 Tên sản phẩm"
+            android:inputType="textCapWords"
+            android:layout_marginTop="20dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_bogoc" />
+
+        <!-- Số lượng -->
+        <EditText
+            android:id="@+id/edtSoLuong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="🔢 Số lượng"
+            android:inputType="number"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_bogoc" />
+
+        <!-- Giá -->
+        <EditText
+            android:id="@+id/edtGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="💰 Giá"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_bogoc" />
+
+        <!-- Đơn vị -->
+        <EditText
+            android:id="@+id/edtDonVi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="📦 Đơn vị (ví dụ: hộp, chai...)"
+            android:inputType="text"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_bogoc" />
+
+        <!-- Nút lưu -->
+        <Button
+            android:id="@+id/btnLuu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💾 Thêm sản phẩm"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#FF7043"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

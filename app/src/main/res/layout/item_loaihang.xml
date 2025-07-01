@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_message_box"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="4dp">
+
+    <!-- Tên loại -->
+    <TextView
+        android:id="@+id/tvTenLoai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🍓 Tên loại sản phẩm"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#C2185B" />
+
+    <!-- Sản phẩm + nút Xóa nằm ngang -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tvSoLuong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="📦 Sản phẩm: 0"
+            android:textSize="16sp"
+            android:textColor="#3F51B5" />
+
+        <Button
+            android:id="@+id/btnXoa"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Xóa"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E91E63"
+            android:paddingHorizontal="16dp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</LinearLayout>

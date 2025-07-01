@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.cuahangtienloi">
+
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Cuahangtienloi"
+        tools:targetApi="33">
+
+        <!-- Các activity -->
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.NhanVienActivity" />
+        <activity android:name=".Activity.ThemNhanVienActivity" />
+        <activity android:name=".Activity.SuaNhanVienActivity" />
+        <activity android:name=".Activity.KhachHangActivity" />
+        <activity android:name=".Activity.LoaiHangActivity" />
+        <activity android:name=".Activity.SanPhamTheoLoaiActivity" />
+        <activity android:name=".Activity.ThemSanPhamActivity" />
+        <activity android:name=".Activity.TonKhoActivity" />
+        <activity android:name=".Activity.SettingsActivity" />
+        <activity android:name=".Activity.DonHangActivity" />
+        <activity android:name=".Activity.ChiTietDonHangActivity" />
+        <activity android:name=".Activity.ThemDonHangActivity" />
+        <activity android:name=".Activity.ThongKeActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
+        <service android:name=".Services.FloatingMenuService"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

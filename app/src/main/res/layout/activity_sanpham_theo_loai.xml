@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0"> <!-- Màu nền pastel nhẹ -->
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tvTieuDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách sản phẩm theo loại"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#8B0000"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutThongDiep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTieuDe"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_thongdiep"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Thông điệp dễ thương 1 -->
+        <TextView
+            android:id="@+id/tvThongDiep1"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="🛒 Chất lượng đảm bảo – an tâm mua sắm!"
+            android:textColor="#5D4037"
+            android:textSize="15sp" />
+
+        <!-- Thông điệp dễ thương 2 -->
+        <TextView
+            android:id="@+id/tvThongDiep2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:text="🌿 Sản phẩm tươi mới mỗi ngày!"
+            android:textColor="#6D4C41"
+            android:textSize="15sp" />
+
+        <!-- Thông điệp dễ thương 3 -->
+        <TextView
+            android:id="@+id/tvThongDiep3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:text="💖 Phục vụ bằng cả tấm lòng!"
+            android:textColor="#795548"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSanPhamTheoLoai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutThongDiep"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="80dp" />
+
+    <!-- Nút thêm sản phẩm -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddSanPham"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="50dp"
+        android:tint="@android:color/white"
+        android:backgroundTint="#FF7043"
+        android:contentDescription="Thêm sản phẩm"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cuahangtienloi</string>
+    <string name="dacotk_underline"><u>Đã có tài khoản? Đăng nhập ngay</u></string>
+    <string name="chcoTK_underline"><u>Chưa có tài khoản? Đăng ký ngay</u></string>
+    <string-array name="loai_thong_ke">
+        <item>Theo ngày</item>
+        <item>Theo tháng</item>
+        <item>Theo năm</item>
+    </string-array>
+</resources>
