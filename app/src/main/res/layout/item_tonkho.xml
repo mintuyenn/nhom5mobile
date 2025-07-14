@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@drawable/bg_sanpham_card"
+    android:gravity="center_vertical"
+    android:elevation="4dp"
+    android:layout_marginVertical="6dp"
+    android:layout_marginHorizontal="12dp"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <!-- Ảnh sản phẩm -->
+    <ImageView
+        android:id="@+id/imgTonKho"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/ic_launcher_background"
+        android:background="@drawable/bg_rounded_image"
+        android:clipToOutline="true" />
+
+    <!-- Thông tin và cảnh báo -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <!-- Tên sản phẩm -->
+        <TextView
+            android:id="@+id/tvTenSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên sản phẩm"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#C2185B" />
+
+        <!-- Số lượng -->
+        <TextView
+            android:id="@+id/tvSoLuongSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số lượng: 0"
+            android:textSize="15sp"
+            android:textColor="#AD1457"
+            android:layout_marginTop="4dp" />
+
+        <!-- Cảnh báo và nút thêm số lượng -->
+        <LinearLayout
+            android:id="@+id/layoutCanhBao"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvCanhBao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⚠️ Hàng sắp hết!"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnThemSoLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm số lượng"
+                android:textSize="13sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/purple_500"
+                android:paddingHorizontal="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

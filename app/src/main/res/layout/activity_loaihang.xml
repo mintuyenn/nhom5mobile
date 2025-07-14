@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0"> <!-- Pastel cam kem nhẹ -->
+
+    <!-- Tiêu đề -->
+    <!-- hồng sen -->
+    <TextView
+        android:id="@+id/tvTieuDeLoaiHang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Quản lý loại hàng "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#D81B60"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="#FFD1DC"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1" />
+
+
+    <!-- Khung viền background quanh danh sách -->
+    <RelativeLayout
+        android:id="@+id/khungRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTieuDeLoaiHang"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_thongdiep"
+        android:padding="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLoaiHang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Danh sách loại hàng"
+            android:paddingBottom="100dp" />
+    </RelativeLayout>
+
+    <!-- Nút thêm loại hàng với dấu + bình thường -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddLoai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="50dp"
+        android:contentDescription="Thêm loại hàng"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@android:color/white"
+        app:backgroundTint="#FF80AB"
+        app:rippleColor="#FFE0EC" />
+
+
+</RelativeLayout>

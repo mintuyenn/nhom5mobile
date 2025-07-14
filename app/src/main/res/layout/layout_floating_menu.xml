@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/floatingMenu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/transparent"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imgCall"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/icon_phone"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_sanpham_card"
+        android:contentDescription="Call" />
+
+    <ImageView
+        android:id="@+id/imgZalo"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/icon_zalo"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_sanpham_card"
+        android:contentDescription="Zalo" />
+
+    <ImageView
+        android:id="@+id/imgMessenger"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_messenger"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_sanpham_card"
+        android:contentDescription="Messenger" />
+</LinearLayout>
