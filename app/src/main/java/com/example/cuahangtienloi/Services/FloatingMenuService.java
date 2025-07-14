@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.content.pm.PackageManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -59,36 +60,47 @@ public class FloatingMenuService extends Service {
             startActivity(intent);
         });
 
+        // ZALO
         menuView.findViewById(R.id.imgZalo).setOnClickListener(v -> {
-            String zaloLink = "https://zalo.me/id-cuaban"; // Thay bằng ID Zalo hợp lệ
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(zaloLink));
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            try {
+            PackageManager pm = getApplicationContext().getPackageManager();
+            Intent intent = pm.getLaunchIntentForPackage("com.zing.zalo");
+
+            if (intent != null) {
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-            } catch (Exception e) {
-                Toast.makeText(this, "Không mở được Zalo hoặc link không hợp lệ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        menuView.findViewById(R.id.imgMessenger).setOnClickListener(v -> {
-            String fbUserId = "tuyen.cao.993194";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("fb-messenger://user-thread/" + fbUserId));
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            try {
-                startActivity(intent);
-            } catch (Exception e) {
-
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/" + fbUserId));
-                webIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            } else {
+                // Nếu Zalo chưa cài, mở trên Google Play
+                Intent playIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.zing.zalo"));
+                playIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 try {
-                    startActivity(webIntent);
-                } catch (Exception ex) {
-                    Toast.makeText(this, "Messenger chưa được cài hoặc không hỗ trợ", Toast.LENGTH_SHORT).show();
+                    startActivity(playIntent);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Không thể mở Zalo hoặc CH Play", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+// MESSENGER
+        menuView.findViewById(R.id.imgMessenger).setOnClickListener(v -> {
+            PackageManager pm = getApplicationContext().getPackageManager();
+            Intent intent = pm.getLaunchIntentForPackage("com.facebook.orca");
+
+            if (intent != null) {
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            } else {
+                // Nếu Messenger chưa cài, mở trên Google Play
+                Intent playIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.facebook.orca"));
+                playIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                try {
+                    startActivity(playIntent);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Không thể mở Messenger hoặc CH Play", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
     }
 

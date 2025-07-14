@@ -45,7 +45,7 @@ public class KhachHangActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
     List<KhachHang> listKhachHang;
 
-    // Uri ảnh được chọn trong dialog thêm khách hàng
+
     private Uri selectedImageUri = null;
     private ImageView currentImgAvatar = null;
 
@@ -256,7 +256,7 @@ public class KhachHangActivity extends AppCompatActivity {
                 .setTitle("Xóa khách hàng")
                 .setMessage("Bạn có chắc muốn xóa khách hàng này không?")
                 .setPositiveButton("Xóa", (dialog, which) -> {
-                    boolean success = dbHelper.deleteKhachHang(kh.getId()); // Bạn cần thêm hàm xóa trong DatabaseHelper
+                    boolean success = dbHelper.deleteKhachHang(kh.getId());
                     if (success) {
                         Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
                         listKhachHang.remove(position);
